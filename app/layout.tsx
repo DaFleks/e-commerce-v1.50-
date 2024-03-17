@@ -17,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className}`}>
+      <body className={`${montserrat.className} bg-gray-300`}>
         <Navbar brandName="E-Commerce v1.50" />
-        {children}
+        <div className="xl:w-2/3 mx-auto shadow-[0px_0px_15px_0px_rgba(0,0,0,0.3)] bg-white">{children}</div>
       </body>
     </html>
   );

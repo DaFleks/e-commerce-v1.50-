@@ -9,11 +9,11 @@ const JumbotronCarousel = ({ children }: { children?: React.ReactNode }) => {
       opts={{ loop: true }}
       plugins={[
         Autoplay({
-          delay: 2000,
+          delay: 6000,
         }),
       ]}
     >
-      <CarouselContent className="h-[300px]">{children}</CarouselContent>
+      <CarouselContent className="h-[300px] xl:h-[500px]">{children}</CarouselContent>
       {/* <CarouselPrevious />
       <CarouselNext /> */}
     </Carousel>
