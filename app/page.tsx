@@ -21,7 +21,7 @@ export default function Home() {
         <JumbotronCarousel>
           <JumbotronItem backgroundImage={carousel1.src} alt="">
             <div className="p-16 flex flex-col justify-center gap-4 h-full w-full">
-              <h1 className="text-4xl text-white font-semibold ">Unbeatable Deals Await - Don't Miss Out!</h1>
+              <h1 className="text-4xl text-white font-semibold ">Unbeatable Deals Await - Don#&apos;t Miss Out!</h1>
               <Button className="w-fit">Explore Products</Button>
             </div>
           </JumbotronItem>
