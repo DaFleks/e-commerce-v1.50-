@@ -1,18 +1,19 @@
-import Highlight from "@/components/Highlight";
-import JumbotronCarousel from "@/components/JumbotronCarousel";
-import Products from "@/components/Products";
+import { HeadsetIcon, SparklesIcon, TruckIcon } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { CarouselItem } from "@/components/ui/carousel";
-import { Separator } from "@/components/ui/separator";
+
+import JumbotronCarousel from "@/components/JumbotronCarousel";
+import JumbotronItem from "@/components/JumbotronItem";
+import SectionHeader from "@/components/SectionHeader";
+import ProductList from "@/components/ProductList";
+import Advertisement from "@/components/Advertisement";
+import Highlight from "@/components/Highlight";
 
 import carousel1 from "@/public/images/carousel1.jpg";
 import carousel2 from "@/public/images/carousel2.jpg";
 import carousel3 from "@/public/images/carousel3.jpg";
-import { HeadsetIcon, SparkleIcon, SparklesIcon, TruckIcon } from "lucide-react";
 
 import discountBg from "@/public/images/discount-bg.jpg";
-import Image from "next/image";
-import JumbotronItem from "@/components/JumbotronItem";
 
 export default function Home() {
   return (
@@ -20,35 +21,38 @@ export default function Home() {
       <header>
         <JumbotronCarousel>
           <JumbotronItem backgroundImage={carousel1.src} alt="">
-            <div className="p-16 flex flex-col justify-center gap-4 h-full w-full">
-              <h1 className="text-4xl text-white font-semibold ">Unbeatable Deals Await - Don#&apos;t Miss Out!</h1>
-              <Button className="w-fit">Explore Products</Button>
+            <div className="p-8 flex flex-col justify-center gap-4 h-full w-full">
+              <h1 className="text-3xl xl:text-4xl text-white font-semibold ">Unbeatable Deals Await, Don&apos;t Miss Out!</h1>
+              <Button className="w-fit">Explore Deals</Button>
             </div>
           </JumbotronItem>
           <JumbotronItem backgroundImage={carousel2.src} alt="">
-            <div className="p-16 flex flex-col justify-center gap-4 h-full w-full">
-              <h1 className="text-4xl text-white font-semibold ">Inspiring Connections, Seamless Shopping.</h1>
-              <Button className="w-fit">See what people have to say</Button>
+            <div className="p-8 flex flex-col justify-center gap-4 h-full w-full text-white font-semibold text-3xl xl:text-4xl">
+              <h1>Shop. Click. Smile.</h1>
+              <Button className="w-fit">Explore Products</Button>
+            </div>
+          </JumbotronItem>
+          <JumbotronItem backgroundImage={carousel3.src} alt="">
+            <div className="p-8 flex flex-col justify-center gap-4 h-full w-full text-white font-semibold text-3xl xl:text-4xl">
+              <h1>Your Wishlist Awaits.</h1>
+              <Button className="w-fit">See Wishlist</Button>
             </div>
           </JumbotronItem>
         </JumbotronCarousel>
       </header>
-      <main className="p-4">
-        <h3 className="font-bold text-lg xl:text-xl mb-2">FEATURED PRODUCTS</h3>
-        <Separator className="bg-gradient-to-r from-gray-300 to-white mb-8" />
-        <Products className="mb-8" />
 
-        <div
-          className="bg-fixed mb-4 bg-slate-700 p-8 h-[300px] flex justify-center flex-col gap-4 relative shadow-[0px_0px_15px_-4px_rgba(0,0,0,0.75)]"
-          style={{ backgroundImage: `url(${discountBg.src})`, backgroundSize: "cover", backgroundPositionY: "100%" }}
-        >
+      <main className="p-4">
+        <SectionHeader title="BEST SELLERS" className="mb-4"/>
+        <ProductList className="mb-8" />
+
+        <Advertisement backgroundImage={discountBg.src} className="mb-8">
           <h1 className="text-2xl text-white font-semibold">Save big by checking out our discounted items.</h1>
           <Button className="w-fit">See Discounts</Button>
-        </div>
+        </Advertisement>
 
-        <h3 className="font-bold text-lg xl:text-xl mb-2">BEST SELLERS</h3>
-        <Separator className="bg-gradient-to-r from-gray-300 to-white mb-8" />
-        <Products page={2} className="mb-8" />
+        <SectionHeader title="PLATFORMS" className="mb-4"/>
+
+
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 text-white text-center text-2xl font-semibold mb-8">
           <Highlight
             icon={<TruckIcon size={64} />}

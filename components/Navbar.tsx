@@ -8,10 +8,10 @@ import ShoppingCart from "./ShoppingCart";
 const Navbar = ({ brandName = "" }: { brandName?: string }) => {
   return (
     <>
-      <nav className="fixed w-full h-[75px] border bg-white shadow z-50">
+      <nav className="fixed w-full h-[75px] shadow-lg z-40 bg-white">
         <div className="h-full xl:w-2/3 xl:px-0 mx-auto flex items-center justify-between">
           <NavMenu />
-          <Link href="#" className="font-semibold">
+          <Link href="/" className="font-semibold">
             {brandName}
           </Link>
           <ShoppingCart />
